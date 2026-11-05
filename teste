@@ -1,0 +1,15 @@
+st.set_page_config(page_title="IDH", page_icon="📊", layout="wide")
+st.title("Análise de IDH para Estados")
+st.dataframe(tabela_tratada)
+
+fig = px.scatter(
+    idh_longo, 
+    x="ano", 
+    y="idh", 
+    color="Estado",
+    size_max=12,
+    
+    title="Relação entre Ano e IDH por estado"
+)
+
+st.plotly_chart(fig, use_container_width=True)
